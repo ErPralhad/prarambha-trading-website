@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Order History{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4 text-primary">My Orders</h2>
+
+    {% if orders %}
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Date</th>
+                        <th>Total Amount</th>
+                        <th>Status</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in orders %}
+                        <tr>
+                            <td>{{ order.id }}</td>
+                            <td>{{ order.created_at|date:"M d, Y H:i" }}</td>
+                            <td>Rs. {{ order.total_amount }}</td>
+                            <td>{{ order.status|default:"Pending" }}</td>
+                            <td>
+                                <a href="{% url 'order_detail' order.id %}" class="btn btn-sm btn-primary">
+                                    View
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <p class="text-muted">You have no past orders.</p>
+    {% endif %}
+</div>
+{% endblock %}

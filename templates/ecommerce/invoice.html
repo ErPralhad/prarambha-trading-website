@@ -1,0 +1,53 @@
+{% load ecommerce_filters %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Invoice #{{ order.id }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #333; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .text-right { text-align: right; }
+        .fw-bold { font-weight: bold; }
+        h2, h4 { margin: 0; }
+    </style>
+</head>
+<body>
+    <h2>Prarambha Trading Pvt. Ltd.</h2>
+    <h4>Invoice #{{ order.id }}</h4>
+    <p>
+        <strong>Customer:</strong> {{ order.user.username }}<br>
+        <strong>Email:</strong> {{ order.email }}<br>
+        <strong>Date:</strong> {{ order.created_at|date:"d M Y" }}
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price (Rs.)</th>
+                <th>Total (Rs.)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in order_items %}
+            <tr>
+                <td>{{ item.product.name }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.price|multiply:item.quantity }}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="3" class="text-right fw-bold">Grand Total</td>
+                <td class="fw-bold">Rs. {{ order_items|sum_total }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>Thank you for your purchase!</p>
+</body>
+</html>

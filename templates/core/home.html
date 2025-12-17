@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Home | Prarambha Trading{% endblock %}
+
+
+{% block content %}
+
+<!-- ================= HERO SECTION ================= -->
+<section class="bg-light text-dark py-5">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold">Welcome to Prarambha Trading Pvt. Ltd.</h1>
+        <p class="lead mt-3">
+            Providing high-quality products and exceptional service across Nepal.
+        </p>
+        <a href="/products/" class="btn btn-primary btn-lg mt-3">
+            Explore Our Products
+        </a>
+    </div>
+</section>
+
+<!-- ================= COMPANY DESCRIPTION ================= -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h2>About Us</h2>
+                <p>
+                    Prarambha Trading Pvt. Ltd. delivers the best quality products to our customers,
+                    specializing in furniture, office supplies, and lifestyle products.
+                    Our mission is to make your life easier by offering quality products, timely delivery,
+                    and excellent support. Trust and transparency guide every interaction.
+                </p>
+                <p>
+                    Prarambha Trading Pvt. Ltd. is a professional trading company focused on
+                    delivering reliable, high-quality products and services.
+                </p>
+                <p>
+                    We combine modern technology, efficient supply chains, and customer-centric
+                    approaches to serve both public and private sectors.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <img src="{% static 'images/Building.png' %}" class="img-fluid rounded shadow" alt="Company Building">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= SERVICES / FEATURES ================= -->
+<section class="bg-light py-5">
+    <div class="container text-center">
+        <h2 class="mb-4">What We Offer</h2>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card h-100 border-0 shadow">
+                    <div class="card-body">
+                        <i class="fas fa-truck fa-3x mb-3 text-primary"></i>
+                        <h5 class="card-title">Timely Delivery</h5>
+                        <p class="card-text">Fast and reliable delivery across Nepal.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card h-100 border-0 shadow">
+                    <div class="card-body">
+                        <i class="fas fa-box-open fa-3x mb-3 text-primary"></i>
+                        <h5 class="card-title">Wide Product Range</h5>
+                        <p class="card-text">A diverse selection of products to meet all your needs.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card h-100 border-0 shadow">
+                    <div class="card-body">
+                        <i class="fas fa-headset fa-3x mb-3 text-primary"></i>
+                        <h5 class="card-title">Customer Support</h5>
+                        <p class="card-text">Friendly support to assist you before and after purchase.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">What Our Customers Say</h2>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card p-3 h-100 shadow">
+                    <p>"Excellent service! Fast delivery and high-quality products."</p>
+                    <h6 class="fw-bold">– Sita Sharma</h6>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card p-3 h-100 shadow">
+                    <p>"Wide product selection. Highly recommend Prarambha Trading."</p>
+                    <h6 class="fw-bold">– Ram Thapa</h6>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card p-3 h-100 shadow">
+                    <p>"Customer support is very friendly and helpful."</p>
+                    <h6 class="fw-bold">– Anisha KC</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= CALL TO ACTION ================= -->
+<section class="py-5 text-center text-white" style="background-color: #0d6efd;">
+    <div class="container">
+        <h2 class="mb-3">Ready to get started?</h2>
+        <p class="mb-4">Browse our products and make your order today.</p>
+        <a href="/products/" class="btn btn-light btn-lg">Shop Now</a>
+    </div>
+</section>
+
+{% endblock %}
+

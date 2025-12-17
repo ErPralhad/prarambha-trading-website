@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Order Placed{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h2 class="text-success">Order Placed Successfully!</h2>
+    <p>Your order number is <strong>#{{ order.id }}</strong></p>
+
+    <p>
+        Thank you for choosing Prarambha Trading Pvt. Ltd.
+        Our team will contact you soon.
+    </p>
+
+    <a href="/" class="btn btn-primary mt-3">Return to Home</a>
+</div>
+{% endblock %}
